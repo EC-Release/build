@@ -14,10 +14,14 @@ c=Common(__name__)
 
 PLUGINS=os.environ["PLUGINS"]
 BINARY="{}/{}".format(os.environ["DIST"],os.environ["ARTIFACT"])
-APIBIN="{}/{}".format(os.environ["API"],os.environ["API"])
-APISRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["APIPKG"])
+#deprecated
+#APIBIN="{}/{}".format(os.environ["API"],os.environ["API"])
+
+#deprecated
+#APISRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["APIPKG"])
 TLSSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["TLSPLUGINPKG"])
 VLNSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["VLNPLUGINPKG"])
+
 #deprecate kepware
 #KEPSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["KEPPLUGINPKG"])
 DHOME="{}/src/{}".format(os.environ["GOPATH"],os.environ["DHOME"])
