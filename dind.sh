@@ -17,7 +17,7 @@ mv ./src/${KEPPLUGINPKG}/src/${INTERNAL_ORG}/predix-data-services ./src/${INTERN
 ls -la && pwd
 
 echo "clonning external sdk.."
-git clone --depth 1 --branch ${BRANCH} https://${GITPUBTKN}@github.com/Enterprise-connect/ec-x-sdk.git ./${DIST}/
+git clone --depth 1 --branch ${BRANCH} https://${GITPUBTKN}@github.com/Enterprise-connect/sdk.git ./${DIST}/
 
 echo "copying library.."
 #mkdir -p ./pkg/${DIST}
