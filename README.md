@@ -1,4 +1,4 @@
-# ec-sdk-buildpack
+# build.sdk
 
 ## to run
 ```bash
