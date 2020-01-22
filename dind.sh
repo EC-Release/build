@@ -6,12 +6,12 @@ mkdir -p ./src/${LIBPKG}
 mv ./src/${DHOME}/src/${LIBPKG}/* ./src/${LIBPKG}
 ls -al ./src/${LIBPKG}
 
-git clone --depth 1 https://${GITLAB_TKN}@${GITLAB_URL}/platform-agnostic/tls-plugin.git ./src/${TLSPLUGINPKG} --branch ${BRANCH}
-git clone --depth 1 https://${GITLAB_TKN}@${GITLAB_URL}/platform-agnostic/vln-plugin.git ./src/${VLNPLUGINPKG} --branch ${BRANCH}
-git clone --depth 1 https://${GITLAB_TKN}@${GITLAB_URL}/platform-agnostic/kpw-plugin.git ./src/${KEPPLUGINPKG} --branch ${BRANCH}
+git clone --depth 1 https://github.com/Enterprise-connect/tls-plg.git ./src/${TLSPLUGINPKG} --branch ${BRANCH}
+git clone --depth 1 https://github.com/Enterprise-connect/vln-plg.git ./src/${VLNPLUGINPKG} --branch ${BRANCH}
 
+# deprecated
 #add px-eventhub gRPC for compiling kepware
-mv ./src/${KEPPLUGINPKG}/src/${INTERNAL_ORG}/predix-data-services ./src/${INTERNAL_ORG}/
+#mv ./src/${KEPPLUGINPKG}/src/${INTERNAL_ORG}/predix-data-services ./src/${INTERNAL_ORG}/
 #git clone --depth 1 https://${GITLAB_TKN}@${GITLAB_URL}/predix/auth-api.git ./src/${APIPKG} --branch ${BRANCH}
 
 ls -la && pwd

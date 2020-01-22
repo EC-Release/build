@@ -18,11 +18,13 @@ APIBIN="{}/{}".format(os.environ["API"],os.environ["API"])
 APISRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["APIPKG"])
 TLSSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["TLSPLUGINPKG"])
 VLNSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["VLNPLUGINPKG"])
-KEPSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["KEPPLUGINPKG"])
+#deprecate kepware
+#KEPSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["KEPPLUGINPKG"])
 DHOME="{}/src/{}".format(os.environ["GOPATH"],os.environ["DHOME"])
 TLSPLUGINBIN="{}/{}/{}".format(PLUGINS,os.environ["TLSPLUGIN"],os.environ["TLSPLUGIN"])
 VLNPLUGINBIN="{}/{}/{}".format(PLUGINS,os.environ["VLNPLUGIN"],os.environ["VLNPLUGIN"])
-KEPPLUGINBIN="{}/{}/{}".format(PLUGINS,os.environ["KEPPLUGIN"],os.environ["KEPPLUGIN"])
+#deprecated
+#KEPPLUGINBIN="{}/{}/{}".format(PLUGINS,os.environ["KEPPLUGIN"],os.environ["KEPPLUGIN"])
 EC_TAG=""
 
 def main():
@@ -41,18 +43,18 @@ def main():
     EC_TAG =  op[op.rfind(" [")+2:op.rfind("]")]
     TLSLDFLAGS="-X main.REV={}.tls".format(EC_TAG)
     VLNLDFLAGS="-X main.REV={}.vln".format(EC_TAG)
-    KEPLDFLAGS="-X main.REV={}.kep".format(EC_TAG)
+    #KEPLDFLAGS="-X main.REV={}.kep".format(EC_TAG)
     print "EC_TAG: {}".format(EC_TAG)
     
     print "generate linux_amd64 plugins bin dns resolved by system"
     os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_linux_sys {}/*.go'.format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
     os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_linux_sys {}/*.go'.format(VLNLDFLAGS,VLNPLUGINBIN,VLNSRC))
-    os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_linux_sys {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
+    #os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_linux_sys {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
 
     print "generate linux_amd64 plugins dns resolved by go."
     os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_linux_var {}/*.go'.format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
     os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_linux_var {}/*.go'.format(VLNLDFLAGS,VLNPLUGINBIN,VLNSRC))
-    os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_linux_var {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
+    #os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_linux_var {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
 
 
     print "generate darwin_amd64 artifacts"
@@ -61,11 +63,11 @@ def main():
 
     print "generate darwin_amd64 plugins bin dns resolved by system"
     os.system('CGO_ENABLED=0 GOOS=darwin GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_darwin_sys {}/*.go'.format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
-    os.system('CGO_ENABLED=0 GOOS=darwin GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_darwin_sys {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
+    #os.system('CGO_ENABLED=0 GOOS=darwin GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_darwin_sys {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
 
     print "generate darwin_amd64 plugins dns resolved by go."
     os.system('CGO_ENABLED=0 GOOS=darwin GODEBUG=netdns=go GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_darwin_var {}/*.go'.format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
-    os.system('CGO_ENABLED=0 GOOS=darwin GODEBUG=netdns=go GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_darwin_var {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
+    #os.system('CGO_ENABLED=0 GOOS=darwin GODEBUG=netdns=go GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_darwin_var {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
 
 
     print "generate windows_amd64 artifacts"
@@ -74,11 +76,11 @@ def main():
 
     print "generate windows_amd64 plugins bin dns resolved by system"
     os.system('CGO_ENABLED=0 GOOS=windows GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_windows_sys.exe {}/*.go'.format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
-    os.system('CGO_ENABLED=0 GOOS=windows GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_windows_sys.exe {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
+    #os.system('CGO_ENABLED=0 GOOS=windows GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_windows_sys.exe {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
 
     print "generate windows_amd64 plugins dns resolved by go."
     os.system('CGO_ENABLED=0 GOOS=windows GODEBUG=netdns=go GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_windows_var.exe {}/*.go'.format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
-    os.system('CGO_ENABLED=0 GOOS=windows GODEBUG=netdns=go GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_windows_var.exe {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
+    #os.system('CGO_ENABLED=0 GOOS=windows GODEBUG=netdns=go GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_windows_var.exe {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
 
     
     print "generate linux_arm artifacts"
@@ -88,18 +90,18 @@ def main():
     print "generate linux_arm plugins bin dns resolved by system"
     os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=arm go build -ldflags "{}" -tags netgo -a -v -o /{}_arm_sys {}/*.go'.format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
     os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=arm go build -ldflags "{}" -tags netgo -a -v -o /{}_arm_sys {}/*.go'.format(VLNLDFLAGS,VLNPLUGINBIN,VLNSRC))
-    os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=arm go build -ldflags "{}" -tags netgo -a -v -o /{}_arm_sys {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
+    #os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=arm go build -ldflags "{}" -tags netgo -a -v -o /{}_arm_sys {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
 
     print "generate linux_arm plugins dns resolved by go."
     os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=arm go build -ldflags "{}" -tags netgo -a -v -o /{}_arm_var {}/*.go'.format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
     os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=arm go build -ldflags "{}" -tags netgo -a -v -o /{}_arm_var {}/*.go'.format(VLNLDFLAGS,VLNPLUGINBIN,VLNSRC))
-    os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=arm go build -ldflags "{}" -tags netgo -a -v -o /{}_arm_var {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
+    #os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=arm go build -ldflags "{}" -tags netgo -a -v -o /{}_arm_var {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
 
 
     print "copying plugins.yml examples.."
     os.system("cp {}/plugins.yml /{}/{}".format(TLSSRC,PLUGINS,os.environ["TLSPLUGIN"]))
     os.system("cp {}/plugins.yml /{}/{}".format(VLNSRC,PLUGINS,os.environ["VLNPLUGIN"]))
-    os.system("cp {}/plugins.yml /{}/{}".format(KEPSRC,PLUGINS,os.environ["KEPPLUGIN"]))
+    #os.system("cp {}/plugins.yml /{}/{}".format(KEPSRC,PLUGINS,os.environ["KEPPLUGIN"]))
 
     
     CKF = 'checksum.txt'
