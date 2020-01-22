@@ -1,0 +1,17 @@
+PLUGINS=plugins
+DIST=dist
+ARTIFACT=ecagent
+API=api
+APIPKG=github.com/Enterprise-Connect/ec-auth-api
+LIBPKG=github.build.ge.com/212359746
+TLSPLUGINPKG=github.com/Enterprise-Connect/ec-tls-plugin
+VLNPLUGINPKG=github.com/Enterprise-Connect/ec-vln-plugin
+KEPPLUGINPKG=github.com/Enterprise-Connect/ec-kpw-plugin
+TLSPLUGIN=tls
+VLNPLUGIN=vln
+KEPPLUGIN=kepware
+DHOME=github.com/Enterprise-Connect/agent
+ORG=github.com
+INTERNAL_ORG=github.build.ge.com
+HTTPS_PROXY=
+NO_PROXY=
