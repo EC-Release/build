@@ -25,8 +25,8 @@ VLNSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["VLNPLUGINPKG"])
 #deprecate kepware
 #KEPSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["KEPPLUGINPKG"])
 DHOME="{}/src/{}".format(os.environ["GOPATH"],os.environ["DHOME"])
-TLSPLUGINBIN="{}/{}/{}".format(PLUGINS,os.environ["TLSPLUGIN"],os.environ["TLSPLUGIN"])
-VLNPLUGINBIN="{}/{}/{}".format(PLUGINS,os.environ["VLNPLUGIN"],os.environ["VLNPLUGIN"])
+TLSPLUGINBIN="{}/{}/bin/{}".format(PLUGINS,os.environ["TLSPLUGIN"],os.environ["TLSPLUGIN"])
+VLNPLUGINBIN="{}/{}/bin/{}".format(PLUGINS,os.environ["VLNPLUGIN"],os.environ["VLNPLUGIN"])
 #deprecated
 #KEPPLUGINBIN="{}/{}/{}".format(PLUGINS,os.environ["KEPPLUGIN"],os.environ["KEPPLUGIN"])
 EC_TAG=""
@@ -103,8 +103,8 @@ def main():
 
 
     print "copying plugins.yml examples.."
-    os.system("cp {}/plugins.yml /{}/{}".format(TLSSRC,PLUGINS,os.environ["TLSPLUGIN"]))
-    os.system("cp {}/plugins.yml /{}/{}".format(VLNSRC,PLUGINS,os.environ["VLNPLUGIN"]))
+    os.system("cp {}/plugins.yml /{}/{}/bin/".format(TLSSRC,PLUGINS,os.environ["TLSPLUGIN"]))
+    os.system("cp {}/plugins.yml /{}/{}/bin/".format(VLNSRC,PLUGINS,os.environ["VLNPLUGIN"]))
     #os.system("cp {}/plugins.yml /{}/{}".format(KEPSRC,PLUGINS,os.environ["KEPPLUGIN"]))
 
     
