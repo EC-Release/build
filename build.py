@@ -51,6 +51,9 @@ def main():
     VLNLDFLAGS="-X main.REV={}.vln".format(EC_TAG)
     #KEPLDFLAGS="-X main.REV={}.kep".format(EC_TAG)
     print "EC_TAG: {}".format(EC_TAG)
+
+    #set EC_REV
+    os.environ["EC_TAG"]=EC_TAG
     
     print "generate linux_amd64 plugins bin dns resolved by system"
     os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_linux_sys {}/*.go'.format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
