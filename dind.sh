@@ -116,6 +116,8 @@ cp ./${ARTIFACT}.rb /brew/Formula/${ARTIFACT}.rb
 
 echo "clonning external sdk.."
 git clone --depth 1 --branch ${BRANCH} https://${GITPUBTKN}@github.com/Enterprise-connect/sdk.git /${DIST}
+#clean up previous dist
+rm /${DIST}/${DIST}/*
 
 echo "copying library.."
 #copying packges..
