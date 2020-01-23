@@ -13,7 +13,8 @@ from common import Common
 c=Common(__name__)
 
 PLUGINS=os.environ["PLUGINS"]
-BINARY="{}/{}".format(os.environ["DIST"],os.environ["DIST"],os.environ["ARTIFACT"])
+DIST=os.environ["DIST"]
+BINARY="{}/{}/{}".format(DIST,DIST,os.environ["ARTIFACT"])
 #deprecated
 #APIBIN="{}/{}".format(os.environ["API"],os.environ["API"])
 
@@ -25,8 +26,9 @@ VLNSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["VLNPLUGINPKG"])
 #deprecate kepware
 #KEPSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["KEPPLUGINPKG"])
 DHOME="{}/src/{}".format(os.environ["GOPATH"],os.environ["DHOME"])
-TLSPLUGINBIN="{}/{}/bin/{}".format(PLUGINS,os.environ["TLSPLUGIN"],os.environ["TLSPLUGIN"])
-VLNPLUGINBIN="{}/{}/bin/{}".format(PLUGINS,os.environ["VLNPLUGIN"],os.environ["VLNPLUGIN"])
+TLSPLUGINBIN="{}/{}/{}/bin".format(DIST,PLUGINS,os.environ["TLSPLUGIN"])
+VLNPLUGINBIN="{}/{}/{}/bin".format(DIST,PLUGINS,os.environ["VLNPLUGIN"])
+
 #deprecated
 #KEPPLUGINBIN="{}/{}/{}".format(PLUGINS,os.environ["KEPPLUGIN"],os.environ["KEPPLUGIN"])
 EC_TAG=""
@@ -103,18 +105,13 @@ def main():
 
 
     print "copying plugins.yml examples.."
-    os.system("cp {}/plugins.yml /{}/{}/bin/".format(TLSSRC,PLUGINS,os.environ["TLSPLUGIN"]))
-    os.system("cp {}/plugins.yml /{}/{}/bin/".format(VLNSRC,PLUGINS,os.environ["VLNPLUGIN"]))
+    os.system("cp {}/plugins.yml /{}/{}/{}/bin/".format(TLSSRC,DIST,PLUGINS,os.environ["TLSPLUGIN"]))
+    os.system("cp {}/plugins.yml /{}/{}/{}/bin/".format(VLNSRC,DIST,PLUGINS,os.environ["VLNPLUGIN"]))
     #os.system("cp {}/plugins.yml /{}/{}".format(KEPSRC,PLUGINS,os.environ["KEPPLUGIN"]))
 
     
     CKF = 'checksum.txt'
-    DIST=os.environ['DIST']
-
     
-    #temp remove lib
-    #LIB=os.environ['LIB']
-
     c.chksumgen('/{}/{}'.format(DIST,DIST),CKF)
 
     #temp remove lib
