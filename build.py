@@ -13,7 +13,7 @@ from common import Common
 c=Common(__name__)
 
 PLUGINS=os.environ["PLUGINS"]
-BINARY="{}/{}".format(os.environ["DIST"],os.environ["ARTIFACT"])
+BINARY="{}/{}".format(os.environ["DIST"],os.environ["DIST"],os.environ["ARTIFACT"])
 #deprecated
 #APIBIN="{}/{}".format(os.environ["API"],os.environ["API"])
 
@@ -115,24 +115,24 @@ def main():
     #temp remove lib
     #LIB=os.environ['LIB']
 
-    c.chksumgen('/{}'.format(DIST),CKF)
+    c.chksumgen('/{}/{}'.format(DIST,DIST),CKF)
 
     #temp remove lib
     #c.chksumgen('/{}'.format(LIB),CKF)
 
-    op = subprocess.check_output(["ls", "-al", "/{}".format(os.environ["DIST"])])
+    op = subprocess.check_output(["ls", "-al", "/{}/{}".format(DIST,DIST)])
     print op
 
     op = subprocess.check_output(["/{}_linux_sys".format(BINARY), "-ver"])
     print op
     
-    fl = os.listdir('/{}'.format(DIST))
+    fl = os.listdir('/{}/{}'.format(DIST,DIST))
     for filename in fl:
         if filename==CKF:
             continue
         
-        os.system('cd /{}; tar -czvf {}.tar.gz ./{}'.format(DIST,filename,filename))
-        os.system('rm /{}/{}'.format(DIST,filename))
+        os.system('cd /{}/{}; tar -czvf {}.tar.gz ./{}'.format(DIST,DIST,filename,filename))
+        os.system('rm /{}/{}/{}'.format(DIST,DIST,filename))
     
     return
         

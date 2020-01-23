@@ -20,15 +20,6 @@ echo "clonning external sdk.."
 git clone --depth 1 --branch ${BRANCH} https://${GITPUBTKN}@github.com/Enterprise-connect/sdk.git /${DIST}
 
 echo "copying library.."
-#mkdir -p ./pkg/${DIST}
-#cp -r /${DIST}/lib/go/pkg/. ${GOPATH}/pkg/
-#ls -al ./pkg && ls -al ./pkg/linux_amd64 && ls -la ./pkg/linux_amd64/github.build.ge.com/212359746/
-
-#echo ${GOPATH}
-#ls -al ./src/
-#cp -r ./src/ ${GOPATH}/
-#ls -al ${GOPATH}/src/github.build.ge.com/212359746/
-
 #copying packges..
 mkdir -p ${GOPATH}/pkg/{linux_amd64_race,darwin_amd64_race,windows_amd64_race,linux_arm_race,linux_amd64,darwin_amd64,windows_amd64,linux_arm}/${LIBPKG}
 
