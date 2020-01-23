@@ -37,7 +37,7 @@ function brew_checkin (){
 function sdk_external_checkin (){
     
     #cp ${GOPATH}/src/${DHOME}/README.md /${DIST}/README_${ARTIFACT}.md
-    cd ./${DIST}
+    cd /${DIST}
 
     echo "updating external sdk.."
     
