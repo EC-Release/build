@@ -3,7 +3,7 @@
 git clone --depth 1 https://${GITLAB_TKN}@${GITLAB_URL}/platform-agnostic/agent.git ${GOPATH}/src/${DHOME} --branch ${BRANCH}
 ls -al ${GOPATH}/src/${DHOME}/src/${LIBPKG}
 mkdir -p ${GOPATH}/src/${LIBPKG}
-mv ${GOPATH}/src/${DHOME}/src/${LIBPKG}/* ./src/${LIBPKG}
+mv ${GOPATH}/src/${DHOME}/src/${LIBPKG}/* ${GOPATH}/src/${LIBPKG}
 ls -al ${GOPATH}/src/${LIBPKG}
 
 git clone --depth 1 https://github.com/Enterprise-connect/tls-plg.git ${GOPATH}/src/${TLSPLUGINPKG} --branch ${BRANCH}
