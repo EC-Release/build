@@ -17,6 +17,7 @@ script:
   -e ARTIFACT=ecagent
   -e API=api
   -e LIBPKG=github.build.ge.com/212359746
+  -e LIBTAG=v1.1beta.fukuoka.2722.lib
   -e TLSPLUGINPKG=github.com/Enterprise-Connect/tls-plg
   -e VLNPLUGINPKG=github.com/Enterprise-Connect/vln-plg
   -e TLSPLUGIN=tls
@@ -26,5 +27,5 @@ script:
   -e GITLAB_URL=$GITLAB_URL
   -e GITLAB_TKN=$GITLAB_TKN
   -e GITPUBTKN=$GITPUBTKN
-  -e BRANCH=$TRAVIS_BRANCH
+  -e SDK_BRANCH=v1.1beta
   -it enterpriseconnect/build:v1.1beta
