@@ -10,7 +10,7 @@ function brew_checkin (){
 	{
 	    git add . && {
 		{
-		    git commit -m "EC Agent ${EC_TAG} homebrew config check-in." && {
+		    git commit -m "agent ${EC_TAG} homebrew config check-in." && {
 			if [ $? -eq 0 ];
 			then 
 			    {
@@ -45,7 +45,7 @@ function sdk_external_checkin (){
 	{
 	    git add . && {
 		{
-		    git commit -m "EC Agent ${EC_TAG} check-in." && {
+		    git commit -m "agent ${EC_TAG} check-in." && {
 			if [ $? -eq 0 ];
 			then 
 			    {
