@@ -122,7 +122,7 @@ git clone --depth 1 --branch ${SDK_BRANCH} https://${GITPUBTKN}@github.com/Enter
 rm /${DIST}/${DIST}/*
 
 
-echo "clonning ${LIB_TAG} from the sdk.."
+echo "clonning ${LIBTAG} from the sdk.."
 git clone --depth 1 --branch ${LIBTAG} https://${GITPUBTKN}@github.com/Enterprise-connect/sdk.git /${LIBTAG}
 #clean up previous dist
 
@@ -142,6 +142,7 @@ ls -la ${GOPATH}/pkg/linux_amd64/${LIBPKG}
 chmod -R 755 ./
 go version
 python2 -u build.py
+EC_TAG=$(cat ./build_tag)
 
 brew_checkin
 sdk_external_checkin
