@@ -17,7 +17,7 @@ script:
   -e ARTIFACT=ecagent
   -e API=api
   -e LIBPKG=github.build.ge.com/212359746
-  -e LIBTAG=v1.1beta.fukuoka.2722.lib
+  -e LIBTAG=v1.1beta.fukuoka.2723.lib
   -e TLSPLUGINPKG=github.com/Enterprise-Connect/tls-plg
   -e VLNPLUGINPKG=github.com/Enterprise-Connect/vln-plg
   -e TLSPLUGIN=tls
