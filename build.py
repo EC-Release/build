@@ -116,24 +116,24 @@ def main():
     
     CKF = 'checksum.txt'
     
-    c.chksumgen('/{}/{}'.format(DIST,DIST),CKF)
+    c.chksumgen('/{}/{}/{}'.format(DIST,DIST,os.environ["ARTIFACT"]),CKF)
 
     #temp remove lib
     #c.chksumgen('/{}'.format(LIB),CKF)
 
-    op = subprocess.check_output(["ls", "-al", "/{}/{}".format(DIST,DIST)])
+    op = subprocess.check_output(["ls", "-al", "/{}/{}/{}".format(DIST,DIST,os.environ["ARTIFACT"])])
     print op
 
     op = subprocess.check_output(["/{}_linux_sys".format(BINARY), "-ver"])
     print op
     
-    fl = os.listdir('/{}/{}'.format(DIST,DIST))
+    fl = os.listdir('/{}/{}/{}'.format(DIST,DIST,os.environ["ARTIFACT"]))
     for filename in fl:
         if filename==CKF:
             continue
         
-        os.system('cd /{}/{}; tar -czvf {}.tar.gz ./{}'.format(DIST,DIST,filename,filename))
-        os.system('rm /{}/{}/{}'.format(DIST,DIST,filename))
+        os.system('cd /{}/{}/{}; tar -czvf {}.tar.gz ./{}'.format(DIST,DIST,os.environ["ARTIFACT"],filename,filename))
+        os.system('rm /{}/{}/{}/{}'.format(DIST,DIST,os.environ["ARTIFACT"],filename))
     
     return
         
