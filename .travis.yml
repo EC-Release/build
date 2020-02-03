@@ -14,7 +14,7 @@ script:
   -e DIND_PATH=
   -e PLUGINS=plugins
   -e DIST=dist
-  -e ARTIFACT=ecagent
+  -e ARTIFACT=agent
   -e API=api
   -e LIBPKG=github.build.ge.com/212359746
   -e LIBTAG=v1.1beta.fukuoka.2724.lib
