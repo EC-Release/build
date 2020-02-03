@@ -14,7 +14,7 @@ c=Common(__name__)
 
 PLUGINS=os.environ["PLUGINS"]
 DIST=os.environ["DIST"]
-BINARY="{}/{}/{}".format(DIST,DIST,os.environ["ARTIFACT"])
+BINARY="{}/{}/{}/{}".format(DIST,DIST,os.environ["ARTIFACT"],os.environ["ARTIFACT"])
 #deprecated
 #APIBIN="{}/{}".format(os.environ["API"],os.environ["API"])
 

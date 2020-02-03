@@ -14,7 +14,7 @@ function brew_checkin (){
 			if [ $? -eq 0 ];
 			then 
 			    {
-				git push origin ${ARTIFACT} &&
+				git push origin ec${ARTIFACT} &&
 				    echo "Change has been pushed."
 			    } || {
 				echo "Push error"
@@ -112,19 +112,18 @@ git clone --depth 1 https://github.com/Enterprise-connect/vln-plg.git ${GOPATH}/
 ls -la && pwd
 
 echo "clonning homebrew formula conf.." 
-git clone --depth 1 https://${GITPUBTKN}@github.com/Enterprise-connect/homebrew-core.git /brew --branch ${ARTIFACT}
+git clone --depth 1 https://${GITPUBTKN}@github.com/Enterprise-connect/homebrew-core.git /brew --branch ec${ARTIFACT}
 
-cp ./${ARTIFACT}.rb /brew/Formula/${ARTIFACT}.rb
+cp ./ec${ARTIFACT}.rb /brew/Formula/ec${ARTIFACT}.rb
 
 echo "clonning external sdk.."
 git clone --depth 1 --branch ${SDK_BRANCH} https://${GITPUBTKN}@github.com/Enterprise-connect/sdk.git /${DIST}
 #clean up previous dist
-rm /${DIST}/${DIST}/*
+rm /${DIST}/${DIST}/${ARTIFACT}/*
 
 
 echo "clonning ${LIBTAG} from the sdk.."
 git clone --depth 1 --branch ${LIBTAG} https://${GITPUBTKN}@github.com/Enterprise-connect/sdk.git /${LIBTAG}
-#clean up previous dist
 
 echo "copying library.."
 #copying packges..

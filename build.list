@@ -1,6 +1,6 @@
 PLUGINS=plugins
 DIST=dist
-ARTIFACT=ecagent
+ARTIFACT=agent
 API=api
 APIPKG=github.com/Enterprise-Connect/ec-auth-api
 LIBPKG=github.build.ge.com/212359746
