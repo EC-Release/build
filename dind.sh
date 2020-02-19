@@ -140,14 +140,16 @@ cp -r /${LIBTAG}/lib/go/pkg/windows_amd64_race/${LIBPKG}/. ${GOPATH}/pkg/windows
 ls -la ${GOPATH}/pkg/linux_amd64/${LIBPKG}
 chmod -R 755 ./
 go version
+# qa stage
 cd ${GOPATH}/src/${DHOME}
 make
 cd /build
-#python2 -u build.py
-#EC_TAG=$(cat ./build_tag)
+# build/deployment
+python2 -u build.py
+EC_TAG=$(cat ./build_tag)
 
-#brew_checkin
-#sdk_external_checkin
-#agent_tagging
+brew_checkin
+sdk_external_checkin
+agent_tagging
 
-#echo sdk build completed.
+echo sdk build completed.
