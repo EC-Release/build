@@ -145,7 +145,7 @@ make
 #EC_TAG=$(cat ./build_tag)
 
 #brew_checkin
-s#dk_external_checkin
+#sdk_external_checkin
 #agent_tagging
 
 #echo sdk build completed.
