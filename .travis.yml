@@ -11,7 +11,6 @@ script:
 - >
   docker run --network host
   -v $TRAVIS_BUILD_DIR:/build
-  -v $TRAVIS_BUILD_DIR/watcher:/go/src/github.com/Enterprise-Connect/agent/watcher
   -e DIND_PATH=
   -e PLUGINS=plugins
   -e DIST=dist
