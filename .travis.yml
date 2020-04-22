@@ -27,7 +27,7 @@ script:
   -e GITLAB_URL=$GITLAB_URL
   -e GITLAB_TKN=$GITLAB_TKN
   -e GITPUBTKN=$GITPUBTKN
-  -e SDK_BRANCH=v1.1beta
+  -e SDK_BRANCH=v1.1
   -it enterpriseconnect/build:v1.1beta
 
 notifications:  
