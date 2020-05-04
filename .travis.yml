@@ -34,6 +34,8 @@ notifications:
   email:  
     recipients:  
     - ec-research@ge.com
-    - prasada.alokam@ge.com
+    - koushik.apal@ge.com
+    - prasad.alokam@ge.com
+    - RamaRao.Srikakulapu@ge.com
     on_success: always  
     on_failure: always
