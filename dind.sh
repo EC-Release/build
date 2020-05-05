@@ -150,6 +150,6 @@ EC_TAG=$(cat ./build_tag)
 
 brew_checkin
 sdk_external_checkin
-agent_tagging
+#agent_tagging
 
 echo sdk build completed.
