@@ -16,7 +16,7 @@ script:
   -e DIST=dist
   -e ARTIFACT=agent
   -e API=api
-  -e LIBPKG=github.build.ge.com/212359746
+  -e LIBPKG=github.com/wzlib
   -e LIBTAG=$LIBTAG
   -e TLSPLUGINPKG=github.com/Enterprise-Connect/tls-plg
   -e VLNPLUGINPKG=github.com/Enterprise-Connect/vln-plg
