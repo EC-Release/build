@@ -34,8 +34,7 @@ notifications:
   email:  
     recipients:  
     - ec-research@ge.com
-    - koushik.apal@ge.com
     - prasad.alokam@ge.com
-    - RamaRao.Srikakulapu@ge.com
+    - digitalgeleguasupport@ge.com
     on_success: always  
     on_failure: always
