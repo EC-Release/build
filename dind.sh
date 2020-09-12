@@ -101,8 +101,8 @@ mv ${GOPATH}/src/${DHOME}/src/${LIBPKG}/* ${GOPATH}/src/${LIBPKG}
 ls -al ${GOPATH}/src/${LIBPKG}
 
 echo "clonning plugin repos.."
-git clone --depth 1 https://github.com/Enterprise-connect/tls-plg.git ${GOPATH}/src/${TLSPLUGINPKG} --branch ${SDK_BRANCH}
-git clone --depth 1 https://github.com/Enterprise-connect/vln-plg.git ${GOPATH}/src/${VLNPLUGINPKG} --branch ${SDK_BRANCH}
+git clone --depth 1 https://${TLSPLUGINPKG}.git ${GOPATH}/src/${TLSPLUGINPKG} --branch ${SDK_BRANCH}
+git clone --depth 1 https://${VLNPLUGINPKG}.git ${GOPATH}/src/${VLNPLUGINPKG} --branch ${SDK_BRANCH}
 
 # deprecated
 #add px-eventhub gRPC for compiling kepware
@@ -111,19 +111,19 @@ git clone --depth 1 https://github.com/Enterprise-connect/vln-plg.git ${GOPATH}/
 
 ls -la && pwd
 
-echo "clonning homebrew formula conf.." 
-git clone --depth 1 https://${GITPUBTKN}@github.com/Enterprise-connect/homebrew-core.git /brew --branch ec${ARTIFACT}
+#echo "clonning homebrew formula conf.." 
+#git clone --depth 1 https://${GITPUBTKN}@github.com/Enterprise-connect/homebrew-core.git /brew --branch ec${ARTIFACT}
 
-cp ./ec${ARTIFACT}.rb /brew/Formula/ec${ARTIFACT}.rb
+#cp ./ec${ARTIFACT}.rb /brew/Formula/ec${ARTIFACT}.rb
 
 echo "clonning external sdk.."
-git clone --depth 1 --branch ${SDK_BRANCH} https://${GITPUBTKN}@github.com/Enterprise-connect/sdk.git /${DIST}
+git clone --depth 1 --branch ${SDK_BRANCH} https://${GITPUBTKN}@github.com/EC-Release/sdk.git /${DIST}
 #clean up previous dist
 rm /${DIST}/${DIST}/${ARTIFACT}/*
 
 
 echo "clonning ${LIBTAG} from the sdk.."
-git clone --depth 1 --branch ${LIBTAG} https://${GITPUBTKN}@github.com/Enterprise-connect/sdk.git /${LIBTAG}
+git clone --depth 1 --branch ${LIBTAG} https://${GITPUBTKN}@github.com/EC-Release/sdk.git /${LIBTAG}
 
 echo "copying library.."
 #copying packges..
