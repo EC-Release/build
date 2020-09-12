@@ -18,11 +18,11 @@ script:
   -e API=api
   -e LIBPKG=github.com/wzlib
   -e LIBTAG=$LIBTAG
-  -e TLSPLUGINPKG=github.com/Enterprise-Connect/tls-plg
-  -e VLNPLUGINPKG=github.com/Enterprise-Connect/vln-plg
+  -e TLSPLUGINPKG=github.com/EC-Release/tls-plg
+  -e VLNPLUGINPKG=github.com/EC-Release/vln-plg
   -e TLSPLUGIN=tls
   -e VLNPLUGIN=vln
-  -e DHOME=github.com/Enterprise-Connect/agent
+  -e DHOME=github.com/EC-Release/agent
   -e ORG=github.com
   -e GITLAB_URL=$GITLAB_URL
   -e GITLAB_TKN=$GITLAB_TKN
@@ -34,7 +34,6 @@ notifications:
   email:  
     recipients:  
     - ec-research@ge.com
-    - prasad.alokam@ge.com
-    - digitalgeleguasupport@ge.com
+    - enterprise-connect@ge.com
     on_success: always  
     on_failure: always
