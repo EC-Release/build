@@ -59,6 +59,8 @@ def main():
     print >>s,EC_TAG
     
     print "generate linux_amd64 plugins bin dns resolved by system"
+    op = 'CMD-> CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags \'"{}"\' -tags netgo -a -v -o /{}_linux_sys {}/*.go'.format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
+    print op
     os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags \'"{}"\' -tags netgo -a -v -o /{}_linux_sys {}/*.go'.format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
     os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags \'"{}"\' -tags netgo -a -v -o /{}_linux_sys {}/*.go'.format(VLNLDFLAGS,VLNPLUGINBIN,VLNSRC))
     #os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_linux_sys {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
