@@ -118,6 +118,7 @@ cp ./ec${ARTIFACT}.rb /brew/Formula/ec${ARTIFACT}.rb
 
 echo "clonning external sdk.."
 git clone --depth 1 --branch ${SDK_BRANCH} https://${GITPUBTKN}@github.com/EC-Release/sdk.git /${DIST}
+
 #clean up previous dist
 rm /${DIST}/${DIST}/${ARTIFACT}/*
 
