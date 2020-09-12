@@ -26,8 +26,8 @@ VLNSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["VLNPLUGINPKG"])
 #deprecate kepware
 #KEPSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["KEPPLUGINPKG"])
 DHOME="{}/src/{}".format(os.environ["GOPATH"],os.environ["DHOME"])
-TLSPLUGINBIN="{}/{}/{}/bin/".format(DIST,PLUGINS,os.environ["TLSPLUGIN"])
-VLNPLUGINBIN="{}/{}/{}/bin/".format(DIST,PLUGINS,os.environ["VLNPLUGIN"])
+TLSPLUGINBIN="{}/{}/{}/bin/{}".format(DIST,PLUGINS,os.environ["TLSPLUGIN"],os.environ["TLSPLUGIN"])
+VLNPLUGINBIN="{}/{}/{}/bin/{}".format(DIST,PLUGINS,os.environ["VLNPLUGIN"],os.environ["VLNPLUGIN"])
 
 #deprecated
 #KEPPLUGINBIN="{}/{}/{}".format(PLUGINS,os.environ["KEPPLUGIN"],os.environ["KEPPLUGIN"])
