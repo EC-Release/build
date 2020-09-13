@@ -31,6 +31,7 @@ VLNPLUGINBIN="{}/{}/{}/bin/{}".format(DIST,PLUGINS,os.environ["VLNPLUGIN"],os.en
 
 #deprecated
 #KEPPLUGINBIN="{}/{}/{}".format(PLUGINS,os.environ["KEPPLUGIN"],os.environ["KEPPLUGIN"])
+
 EC_TAG=""
 
 def main():
