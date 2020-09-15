@@ -34,6 +34,10 @@ VLNPLUGINBIN="{}/{}/{}/bin/{}".format(DIST,PLUGINS,os.environ["VLNPLUGIN"],os.en
 
 EC_TAG=""
 
+def test_cipher():
+   agt="/{}_linux_sys".format(BINARY)
+   os.system(("EC_PPS={} {} -hsh".format(os.environ["CA_PPRS"],BINARY))
+             
 def main():
 
     print "generate linux_amd64 artifacts"
@@ -55,6 +59,9 @@ def main():
     #KEPLDFLAGS="-X main.REV={}.kep".format(EC_TAG)
     print "EC_TAG: {}".format(EC_TAG)
 
+    #test cipher          
+    test_cipher()
+             
     #set EC_REV
     s = open('build_tag','w')
     print >>s,EC_TAG
