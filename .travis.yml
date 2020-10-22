@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-- docker pull enterpriseconnect/build:v1.2beta
+- docker pull enterpriseconnect/build:v1beta
 - docker images
 
 script:
@@ -27,9 +27,9 @@ script:
   -e GITLAB_URL=$GITLAB_URL
   -e GITLAB_TKN=$GITLAB_TKN
   -e GITPUBTKN=$GITPUBTKN
-  -e SDK_BRANCH=v1.2beta
+  -e SDK_BRANCH=v1beta
   -e CA_PPRS=$CA_PPRS
-  -it enterpriseconnect/build:v1.2beta
+  -it enterpriseconnect/build:v1beta
 
 notifications:  
   email:  
