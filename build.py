@@ -14,7 +14,7 @@ c=Common(__name__)
 
 PLUGINS=os.environ["PLUGINS"]
 DIST=os.environ["DIST"]
-BINARY="{}/{}/{}/{}".format(DIST,DIST,os.environ["ARTIFACT"],os.environ["ARTIFACT"])
+BINARY="{}/{}/{}/{}".format(DIST,DIST,os.environ["ARTIFACT"])
 #deprecated
 #APIBIN="{}/{}".format(os.environ["API"],os.environ["API"])
 
@@ -128,7 +128,7 @@ def main():
     
     CKF = 'checksum.txt'
     
-    c.chksumgen('/{}/{}/{}'.format(DIST,DIST,os.environ["ARTIFACT"]),CKF)
+    c.chksumgen('/{}/{}'.format(DIST,DIST,CKF)
 
     #temp remove lib
     #c.chksumgen('/{}'.format(LIB),CKF)
@@ -139,13 +139,13 @@ def main():
     op = subprocess.check_output(["/{}_linux_sys".format(BINARY), "-ver"])
     print op
     
-    fl = os.listdir('/{}/{}/{}'.format(DIST,DIST,os.environ["ARTIFACT"]))
+    fl = os.listdir('/{}/{}'.format(DIST,DIST))
     for filename in fl:
         if filename==CKF:
             continue
         
-        os.system('cd /{}/{}/{}; tar -czvf {}.tar.gz ./{}'.format(DIST,DIST,os.environ["ARTIFACT"],filename,filename))
-        os.system('rm /{}/{}/{}/{}'.format(DIST,DIST,os.environ["ARTIFACT"],filename))
+        os.system('cd /{}/{}/{}; tar -czvf {}.tar.gz ./{}'.format(DIST,DIST,filename,filename))
+        os.system('rm /{}/{}/{}'.format(DIST,DIST,filename))
     
     return
         
