@@ -144,7 +144,7 @@ def main():
         if filename==CKF:
             continue
         
-        os.system('cd /{}/{}/{}; tar -czvf {}.tar.gz ./{}'.format(DIST,DIST,filename,filename))
+        os.system('cd /{}/{}; tar -czvf {}.tar.gz ./{}'.format(DIST,DIST,filename,filename))
         os.system('rm /{}/{}/{}'.format(DIST,DIST,filename))
     
     return
