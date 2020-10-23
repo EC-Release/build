@@ -128,7 +128,7 @@ def main():
     
     CKF = 'checksum.txt'
     
-    c.chksumgen('/{}/{}'.format(DIST,DIST,CKF))
+    c.chksumgen('/{}/{}'.format(DIST,DIST),CKF)
 
     #temp remove lib
     #c.chksumgen('/{}'.format(LIB),CKF)
