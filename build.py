@@ -14,7 +14,7 @@ c=Common(__name__)
 
 PLUGINS=os.environ["PLUGINS"]
 DIST=os.environ["DIST"]
-BINARY="{}/{}/{}/{}".format(DIST,DIST,os.environ["ARTIFACT"])
+BINARY="{}/{}/{}".format(DIST,DIST,os.environ["ARTIFACT"])
 #deprecated
 #APIBIN="{}/{}".format(os.environ["API"],os.environ["API"])
 
@@ -62,7 +62,7 @@ def main():
     print "EC_TAG: {}".format(EC_TAG)
 
     #test cipher          
-    test_cipher()
+    #test_cipher()
              
     #set EC_REV
     s = open('build_tag','w')
