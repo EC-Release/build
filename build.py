@@ -38,8 +38,8 @@ def test_cipher():
    agt="/{}_linux_sys".format(BINARY)
    
    print "cipher functional test"
-   os.system(("EC_PPS={} {} -hsh".format(os.environ["CA_PPRS"],BINARY))
-             
+   os.system("EC_PPS={} {} -hsh".format(os.environ["CA_PPRS"],BINARY))
+      
 def main():
 
     print "generate linux_amd64 artifacts"
@@ -148,6 +148,6 @@ def main():
         os.system('rm /{}/{}/{}'.format(DIST,DIST,filename))
     
     return
-        
+   
 if __name__=='__main__':
     main()
