@@ -53,9 +53,9 @@ def main():
     os.system("/{}_linux_sys -inf".format(BINARY))
     #get the current rev
     op = subprocess.check_output(["/{}_linux_sys".format(BINARY), "-ver"])
-    #EC_TAG =  op[op.rfind(" [")+2:op.rfind("]")]
+    EC_TAG =  op[op.rfind(" [")+2:op.rfind("]")]
     #fix missing brackets issue when parsing rev
-    EC_TAG = op[op.rfind(" "):]
+    #EC_TAG = op[op.rfind(" "):]
     TLSLDFLAGS="-X \"main.REV={}.tls\"".format(EC_TAG)
     VLNLDFLAGS="-X \"main.REV={}.vln\"".format(EC_TAG)
     #KEPLDFLAGS="-X main.REV={}.kep".format(EC_TAG)
@@ -133,7 +133,7 @@ def main():
     #temp remove lib
     #c.chksumgen('/{}'.format(LIB),CKF)
 
-    op = subprocess.check_output(["ls", "-al", "/{}/{}/{}".format(DIST,DIST,os.environ["ARTIFACT"])])
+    op = subprocess.check_output(["ls", "-al", "/{}/{}".format(DIST,DIST)])
     print op
 
     op = subprocess.check_output(["/{}_linux_sys".format(BINARY), "-ver"])
