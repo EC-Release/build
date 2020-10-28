@@ -1,4 +1,5 @@
 language: minimal
+if: head_branch =~ ^v1.1beta_update$ OR branch = v1.1beta
 
 services:
   - docker
