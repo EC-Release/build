@@ -37,7 +37,7 @@ def test_cipher():
    agt="/{}_linux_sys".format(BINARY)
    
    print "cipher functional test"
-   os.system(("EC_PPS={} {} -hsh".format(os.environ["CA_PPRS"],BINARY))
+   os.system("EC_PPS={} {} -hsh".format(os.environ["CA_PPRS"],BINARY))
              
 def main():
 
