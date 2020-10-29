@@ -128,15 +128,12 @@ git clone --depth 1 --branch ${LIBTAG} https://${GITPUBTKN}@github.com/EC-Releas
 
 echo "copying library.."
 #copying packges..
-mkdir -p ${GOPATH}/pkg/{linux_amd64_race,darwin_amd64_race,windows_amd64_race,linux_arm_race,linux_amd64,darwin_amd64,windows_amd64,linux_arm}/${LIBPKG}
+mkdir -p ${GOPATH}/pkg/{linux_amd64_race,darwin_amd64,windows_amd64,linux_arm}/${LIBPKG}
 
-cp -r /${LIBTAG}/lib/go/pkg/linux_amd64/${LIBPKG}/. ${GOPATH}/pkg/linux_amd64/${LIBPKG}/
+cp -r /${LIBTAG}/lib/go/pkg/linux_amd64_race/${LIBPKG}/. ${GOPATH}/pkg/linux_amd64_race/${LIBPKG}/
 cp -r /${LIBTAG}/lib/go/pkg/darwin_amd64/${LIBPKG}/. ${GOPATH}/pkg/darwin_amd64/${LIBPKG}/
 cp -r /${LIBTAG}/lib/go/pkg/windows_amd64/${LIBPKG}/. ${GOPATH}/pkg/windows_amd64/${LIBPKG}/
 cp -r /${LIBTAG}/lib/go/pkg/linux_arm/${LIBPKG}/. ${GOPATH}/pkg/linux_arm/${LIBPKG}/
-
-cp -r /${LIBTAG}/lib/go/pkg/linux_amd64_race/${LIBPKG}/. ${GOPATH}/pkg/linux_amd64_race/${LIBPKG}/
-cp -r /${LIBTAG}/lib/go/pkg/windows_amd64_race/${LIBPKG}/. ${GOPATH}/pkg/windows_amd64_race/${LIBPKG}/
 
 ls -la ${GOPATH}/pkg/linux_amd64/${LIBPKG}
 chmod -R 755 ./
