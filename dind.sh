@@ -141,9 +141,9 @@ go version
 # qa stage
 cd ${GOPATH}/src/${DHOME}
 make
-# cd /build
+cd /build
 # build/deployment
-python2 -u /build/build.py
+python2 -u build.py
 EC_TAG=$(cat ./build_tag)
 
 brew_checkin
