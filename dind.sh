@@ -130,7 +130,7 @@ echo "copying library.."
 #copying packges..
 mkdir -p ${GOPATH}/pkg/{linux_amd64_race,linux_amd64,darwin_amd64,windows_amd64,linux_arm}/${LIBPKG}
 
-cp -r /${LIBTAG}/lib/go/pkg/linux_amd64/${LIBPKG}/. ${GOPATH}/pkg/linux_amd64_race/${LIBPKG}/
+cp -r /${LIBTAG}/lib/go/pkg/linux_amd64/${LIBPKG}/. ${GOPATH}/pkg/linux_amd64/${LIBPKG}/
 cp -r /${LIBTAG}/lib/go/pkg/linux_amd64_race/${LIBPKG}/. ${GOPATH}/pkg/linux_amd64_race/${LIBPKG}/
 cp -r /${LIBTAG}/lib/go/pkg/darwin_amd64/${LIBPKG}/. ${GOPATH}/pkg/darwin_amd64/${LIBPKG}/
 cp -r /${LIBTAG}/lib/go/pkg/windows_amd64/${LIBPKG}/. ${GOPATH}/pkg/windows_amd64/${LIBPKG}/
