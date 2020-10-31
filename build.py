@@ -42,10 +42,10 @@ def test_cipher():
 def main():
 
     print "generate linux_amd64 artifacts with race; dns resolved by system"
-    os.system("CGO_ENABLED=1 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -tags netgo -a -v -race -o /{}_linux_sys {}/*.go".format(BINARY,DHOME))
+    os.system("CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -tags netgo -a -v -o /{}_linux_sys {}/*.go".format(BINARY,DHOME))
     
     print "generate linux_amd64 artifacts with race; dns resolved by go"
-    os.system("CGO_ENABLED=1 GOOS=linux GODEBUG=netdns=go GOARCH=amd64 go build -tags netgo -a -v -race -o /{}_linux_var {}/*.go".format(BINARY,DHOME))
+    os.system("CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=amd64 go build -tags netgo -a -v -o /{}_linux_var {}/*.go".format(BINARY,DHOME))
 
     #print "generate linux_adm64 secuity api binary"
     #os.system("CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -tags netgo -a -v -o /{}_linux {}/*.go".format(APIBIN, APISRC))
@@ -71,8 +71,8 @@ def main():
     #os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_linux_sys {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
 
     print "generate linux_amd64 plugins dns resolved by go."
-    os.system("CGO_ENABLED=1 GOOS=linux GODEBUG=netdns=go GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_linux_var {}/*.go".format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
-    os.system("CGO_ENABLED=1 GOOS=linux GODEBUG=netdns=go GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_linux_var {}/*.go".format(VLNLDFLAGS,VLNPLUGINBIN,VLNSRC))
+    os.system("CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_linux_var {}/*.go".format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
+    os.system("CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_linux_var {}/*.go".format(VLNLDFLAGS,VLNPLUGINBIN,VLNSRC))
     #os.system('CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=amd64 go build -ldflags "{}" -tags netgo -a -v -o /{}_linux_var {}/*.go'.format(KEPLDFLAGS,KEPPLUGINBIN,KEPSRC))
 
 
