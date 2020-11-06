@@ -146,7 +146,7 @@ CGO_ENABLED=1 go build -race -v -o ./agent .
 exit 0
 cd /build
 # build/deployment
-#python2 -u build.py
+python build.py
 EC_TAG=$(cat ./build_tag)
 
 brew_checkin
