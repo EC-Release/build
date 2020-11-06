@@ -141,7 +141,7 @@ chmod -R 755 ./
 go version
 # qa stage
 cd ${GOPATH}/src/${DHOME}
-make
+#make
 cd /build
 # build/deployment
 python2 -u build.py
