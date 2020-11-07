@@ -142,7 +142,6 @@ go version
 # qa stage
 cd ${GOPATH}/src/${DHOME}
 make
-exit 0
 
 cd /build
 # build/deployment
