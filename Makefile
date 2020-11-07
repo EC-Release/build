@@ -12,6 +12,7 @@
 
 ecagent=agent
 BINARY=${DIST}/${DIST}/${ARTIFACT}/${ARTIFACT}
+DHOME_SRC=${GOPATH}/src/${DHOME} 
 
 .DEFAULT_GOAL: $(ecagent)
 
@@ -22,7 +23,7 @@ pre-install:
 	
 linux_amd64_build:
 	@printf "\ngenerate linux_amd64 artifacts with race; dns resolved by system..\n\n"
-	@CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -tags netgo -a -v -o /${BINARY}_linux_sys ${DHOME}/*.go
+	@CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -tags netgo -a -v -o /${BINARY}_linux_sys ${DHOME_SRC}/*.go
        
 .PHONY: install
 install:
