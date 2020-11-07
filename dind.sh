@@ -92,9 +92,6 @@ function agent_tagging(){
     cd /build
 }
 
-printenv 
-python build.py
-exit 0
 echo "clonning agent repo.."
 git clone --depth 1 https://${GITLAB_TKN}@${GITLAB_URL}/platform-agnostic/agent.git ${GOPATH}/src/${DHOME} --branch ${SDK_BRANCH}
 ls -al ${GOPATH}/src/${DHOME}/src/${LIBPKG}
@@ -143,10 +140,11 @@ chmod -R 755 ./
 go version
 # qa stage
 cd ${GOPATH}/src/${DHOME}
-make
+#make
 cd /build
 # build/deployment
-python build.py
+make
+exit 0
 EC_TAG=$(cat ./build_tag)
 
 brew_checkin
