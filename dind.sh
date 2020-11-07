@@ -92,7 +92,9 @@ function agent_tagging(){
     cd /build
 }
 
-
+printenv 
+python build.py
+exit 0
 echo "clonning agent repo.."
 git clone --depth 1 https://${GITLAB_TKN}@${GITLAB_URL}/platform-agnostic/agent.git ${GOPATH}/src/${DHOME} --branch ${SDK_BRANCH}
 ls -al ${GOPATH}/src/${DHOME}/src/${LIBPKG}
