@@ -11,34 +11,20 @@
 #
 
 ecagent=agent
+BINARY=$DIST/$DIST/$ARTIFACT/$ARTIFACT
+DHOME=$GOPATH/src/$DHOME
 
 .DEFAULT_GOAL: $(ecagent)
 
-$(ecagent): agent-sast agent-lint agent-test agent-race-test agent-build
+$(ecagent): linux_amd64_build
 
 pre-install:
 	@ls -la
-agent-build:
-	@echo creating artifact..
-	@go build -o ./agent .
-	@./agent -ver
-
-agent-sast:
-	@echo begining SAST scanning..
-	@gosec ./...
-
-agent-lint:
-	echo begining LINT checking..
-	@golint ./...
-
-agent-test:
-	@echo begining test without race..
-	@go test -vet=off
 	
-agent-race-test:
-	@echo begining test with race to spot potential threading issue in goroutine..
-	@go test -race -vet=off
-
+linux_amd64_build:
+	@printf "\n\ngenerate linux_amd64 artifacts with race; dns resolved by system\n\n"
+        @CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -tags netgo -a -v -o /${BINARY}_linux_sys ${DHOME}/*.go
+       
 .PHONY: install
 install:
-	ls -al
+	@ls -al
