@@ -142,8 +142,6 @@ go version
 # qa stage
 cd ${GOPATH}/src/${DHOME}
 make
-CGO_ENABLED=1 go build -race -v -o ./agent .
-exit 0
 cd /build
 # build/deployment
 python build.py
