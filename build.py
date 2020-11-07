@@ -41,6 +41,8 @@ def test_cipher():
              
 def main():
 
+    os.system("printenv")
+    return
     print "generate linux_amd64 artifacts with race; dns resolved by system"
     os.system("CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -tags netgo -a -v -o /{}_linux_sys {}/*.go".format(BINARY,DHOME))
     
