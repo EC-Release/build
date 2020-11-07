@@ -141,11 +141,12 @@ chmod -R 755 ./
 go version
 # qa stage
 cd ${GOPATH}/src/${DHOME}
-#make
-cd /build
-# build/deployment
 make
 exit 0
+
+cd /build
+# build/deployment
+python build.py
 EC_TAG=$(cat ./build_tag)
 
 brew_checkin
