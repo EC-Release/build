@@ -12,7 +12,6 @@
 
 ecagent=agent
 BINARY=${DIST}/${DIST}/${ARTIFACT}/${ARTIFACT}
-DHOME=${GOPATH}/src/${DHOME}
 
 .DEFAULT_GOAL: $(ecagent)
 
