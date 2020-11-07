@@ -141,7 +141,7 @@ chmod -R 755 ./
 go version
 # qa stage
 cd ${GOPATH}/src/${DHOME}
-#make
+make
 CGO_ENABLED=1 go build -race -v -o ./agent .
 exit 0
 cd /build
