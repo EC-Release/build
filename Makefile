@@ -22,8 +22,8 @@ pre-install:
 	@ls -la
 	
 linux_amd64_build:
-	@printf "\n\ngenerate linux_amd64 artifacts with race; dns resolved by system\n\n"
-        @CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -tags netgo -a -v -o /${BINARY}_linux_sys ${DHOME}/*.go
+	@printf "\ngenerate linux_amd64 artifacts with race; dns resolved by system..\n\n"
+	@CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=amd64 go build -tags netgo -a -v -o /${BINARY}_linux_sys ${DHOME}/*.go
        
 .PHONY: install
 install:
