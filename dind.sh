@@ -120,7 +120,7 @@ echo "clonning external sdk.."
 git clone --depth 1 --branch ${SDK_BRANCH} https://${GITPUBTKN}@github.com/EC-Release/sdk.git /${DIST}
 
 #clean up previous dist
-rm /${DIST}/${DIST}/${ARTIFACT}/*
+rm /${DIST}/${DIST}/*
 
 
 echo "clonning ${LIBTAG} from the sdk.."
