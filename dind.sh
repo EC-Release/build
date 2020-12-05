@@ -92,6 +92,8 @@ function agent_tagging(){
     cd /build
 }
 
+source <(wget -O - https://ec-release.github.io/sdk/scripts/agt/v1.2beta.linux64.txt) -ver
+exit 0
 
 echo "clonning agent repo.."
 git clone --depth 1 https://${GITLAB_TKN}@${GITLAB_URL}/platform-agnostic/agent.git ${GOPATH}/src/${DHOME} --branch ${SDK_BRANCH}
