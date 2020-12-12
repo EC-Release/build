@@ -6,7 +6,7 @@ services:
   
 env:
   global:
-    - LIBTAG="v1.2beta.reiwa.2.lib"
+    - LIBTAG="1.2-b.0.reiwa.lib"
 
 before_install:
 - docker pull enterpriseconnect/build:v1.2beta
