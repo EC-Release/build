@@ -12,7 +12,7 @@ from common import Common
 
 c=Common(__name__)
 
-PLUGINS=os.environ["PLUGINS"]
+#PLUGINS=os.environ["PLUGINS"]
 DIST=os.environ["DIST"]
 BINARY="{}/{}/{}/{}".format(DIST,DIST,os.environ["ARTIFACT"],os.environ["ARTIFACT"])
 #deprecated
