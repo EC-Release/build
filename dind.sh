@@ -110,10 +110,10 @@ ls -al ${GOPATH}/src/${LIBPKG}
 
 ls -la && pwd
 
-echo "clonning homebrew formula conf.." 
-git clone --depth 1 https://${GITPUBTKN}@github.com/EC-Release/homebrew-core.git /brew --branch ec${ARTIFACT}
+#echo "clonning homebrew formula conf.." 
+#git clone --depth 1 https://${GITPUBTKN}@github.com/EC-Release/homebrew-core.git /brew --branch ec${ARTIFACT}
 
-cp ./ec${ARTIFACT}.rb /brew/Formula/ec${ARTIFACT}.rb
+#cp ./ec${ARTIFACT}.rb /brew/Formula/ec${ARTIFACT}.rb
 
 echo "clonning external sdk.."
 git clone --depth 1 --branch ${SDK_BRANCH} https://${GITPUBTKN}@github.com/EC-Release/tengu.git /${DIST}
@@ -148,7 +148,7 @@ cd /build
 python build.py
 EC_TAG=$(cat ./build_tag)
 
-brew_checkin
+#brew_checkin
 sdk_external_checkin
 #agent_tagging
 
