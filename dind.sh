@@ -99,9 +99,9 @@ mkdir -p ${GOPATH}/src/${LIBPKG}
 mv ${GOPATH}/src/${DHOME}/src/${LIBPKG}/* ${GOPATH}/src/${LIBPKG}
 ls -al ${GOPATH}/src/${LIBPKG}
 
-echo "clonning plugin repos.."
-git clone --depth 1 https://${TLSPLUGINPKG}.git ${GOPATH}/src/${TLSPLUGINPKG} --branch ${SDK_BRANCH}
-git clone --depth 1 https://${VLNPLUGINPKG}.git ${GOPATH}/src/${VLNPLUGINPKG} --branch ${SDK_BRANCH}
+#echo "clonning plugin repos.."
+#git clone --depth 1 https://${TLSPLUGINPKG}.git ${GOPATH}/src/${TLSPLUGINPKG} --branch ${SDK_BRANCH}
+#git clone --depth 1 https://${VLNPLUGINPKG}.git ${GOPATH}/src/${VLNPLUGINPKG} --branch ${SDK_BRANCH}
 
 # deprecated
 #add px-eventhub gRPC for compiling kepware
