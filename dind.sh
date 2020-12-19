@@ -92,8 +92,8 @@ function agent_tagging(){
     cd /build
 }
 
-echo "clonning agent repo.."
-git clone --depth 1 https://${GITLAB_TKN}@${GITLAB_URL}/platform-agnostic/agent.git ${GOPATH}/src/${DHOME} --branch ${SDK_BRANCH}
+echo "clonning tengu repo.."
+git clone --depth 1 https://${GITPUBTKN}@github.com/EC-Release/tengu.git ${GOPATH}/src/${DHOME} --branch ${SDK_BRANCH}
 ls -al ${GOPATH}/src/${DHOME}/src/${LIBPKG}
 mkdir -p ${GOPATH}/src/${LIBPKG}
 mv ${GOPATH}/src/${DHOME}/src/${LIBPKG}/* ${GOPATH}/src/${LIBPKG}
@@ -116,7 +116,7 @@ git clone --depth 1 https://${GITPUBTKN}@github.com/EC-Release/homebrew-core.git
 cp ./ec${ARTIFACT}.rb /brew/Formula/ec${ARTIFACT}.rb
 
 echo "clonning external sdk.."
-git clone --depth 1 --branch ${SDK_BRANCH} https://${GITPUBTKN}@github.com/EC-Release/sdk.git /${DIST}
+git clone --depth 1 --branch ${SDK_BRANCH} https://${GITPUBTKN}@github.com/EC-Release/tengu.git /${DIST}
 
 if [[ ! -z "/$DIST/$DIST/$ARTIFACT" ]]; then
   #clean up previous dist
@@ -124,7 +124,7 @@ if [[ ! -z "/$DIST/$DIST/$ARTIFACT" ]]; then
 fi
 
 echo "clonning ${LIBTAG} from the sdk.."
-git clone --depth 1 --branch ${LIBTAG} https://${GITPUBTKN}@github.com/EC-Release/sdk.git /${LIBTAG}
+git clone --depth 1 --branch ${LIBTAG} https://${GITPUBTKN}@github.com/EC-Release/tengu.git /${LIBTAG}
 
 echo "copying library.."
 #copying packges..
