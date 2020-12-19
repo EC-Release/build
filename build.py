@@ -20,8 +20,8 @@ BINARY="{}/{}/{}/{}".format(DIST,DIST,os.environ["ARTIFACT"],os.environ["ARTIFAC
 
 #deprecated
 #APISRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["APIPKG"])
-TLSSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["TLSPLUGINPKG"])
-VLNSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["VLNPLUGINPKG"])
+#TLSSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["TLSPLUGINPKG"])
+#VLNSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["VLNPLUGINPKG"])
 
 #deprecate kepware
 #KEPSRC="{}/src/{}".format(os.environ["GOPATH"],os.environ["KEPPLUGINPKG"])
