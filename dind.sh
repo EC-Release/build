@@ -45,7 +45,7 @@ function sdk_external_checkin (){
 	{
 	    git add . && {
 		{
-		    git commit -m "agent ${EC_TAG} check-in." && {
+		    git commit -m "tengu ${EC_TAG} check-in." && {
 			if [ $? -eq 0 ];
 			then 
 			    {
@@ -81,7 +81,7 @@ function agent_tagging(){
 	    {
 		git tag $EC_TAG
 		git push -f origin ${SDK_BRANCH} --tags &&
-		    echo "agent repo is tagged."
+		    echo "tengu repo is tagged."
 	    } || {
 		echo "Push error"
 		exit 1
