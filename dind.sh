@@ -93,7 +93,7 @@ function agent_tagging(){
 }
 
 echo "clonning tengu repo.."
-git clone --depth 1 https://${GITPUBTKN}@github.com/EC-Release/tengu.git ${GOPATH}/src/${DHOME} --branch ${SDK_BRANCH}
+git clone --depth 1 https://${GITPUBTKN}@github.com/EC-Release/tengu.git ${GOPATH}/src/${DHOME} --branch ${SRC_BRANCH}
 ls -al ${GOPATH}/src/${DHOME}/src/${LIBPKG}
 mkdir -p ${GOPATH}/src/${LIBPKG}
 mv ${GOPATH}/src/${DHOME}/src/${LIBPKG}/* ${GOPATH}/src/${LIBPKG}
