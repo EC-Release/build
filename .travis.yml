@@ -27,7 +27,7 @@ script:
   -e GITLAB_URL=$GITLAB_URL
   -e GITLAB_TKN=$GITLAB_TKN
   -e GITPUBTKN=$GITPUBTKN
-  -e SDK_BRANCH=1.3-b
+  -e SDK_BRANCH=disty
   -e CA_PPRS=$CA_PPRS
   -it enterpriseconnect/build:v1.2beta
 
