@@ -1,12 +1,12 @@
 language: minimal
-if: head_branch =~ ^1.3-b_update$ OR branch = 1.3-b
+if: head_branch =~ ^1.3-rc_update$ OR branch = 1.3-rc
 
 services:
   - docker
   
 env:
   global:
-    - LIBTAG="1.3-b.0.reiwa.lib"
+    - LIBTAG="1.3-rc.0.reiwa.lib"
 
 before_install:
 - docker pull enterpriseconnect/build:v1.2beta
@@ -28,7 +28,7 @@ script:
   -e GITLAB_TKN=$GITLAB_TKN
   -e GITPUBTKN=$GITPUBTKN
   -e SDK_BRANCH=disty
-  -e SRC_BRANCH=1.3-b
+  -e SRC_BRANCH=1.3-rc
   -e CA_PPRS=$CA_PPRS
   -it enterpriseconnect/build:v1.2beta
 
