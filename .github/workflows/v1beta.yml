@@ -11,7 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     environment: v1beta
-    #env:
+    env:
+      LIBTAG: "v1beta.fukuoka.1729.lib"
+      BINTAG: "v1beta.fukuoka.1729"
+      GITLAB_URL: "gitlab.com/digital-fo/connectivity/enterprise-connect"
     steps:
       - uses: actions/checkout@v2
       - name: dind build
@@ -28,6 +31,7 @@ jobs:
             -e API=api
             -e LIBPKG=github.com/wzlib
             -e LIBTAG=$LIBTAG
+            -e BINTAG=$BINTAG
             -e TLSPLUGINPKG=github.com/EC-Release/tls-plg
             -e VLNPLUGINPKG=github.com/EC-Release/vln-plg
             -e TLSPLUGIN=tls
