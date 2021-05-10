@@ -146,7 +146,8 @@ make
 cd /build
 # build/deployment
 python2 -u build.py
-EC_TAG=$(cat ./build_tag)
+#EC_TAG=$(cat ./build_tag)
+EC_TAG=$BINTAG
 
 brew_checkin
 sdk_external_checkin
