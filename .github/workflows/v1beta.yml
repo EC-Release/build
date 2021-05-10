@@ -5,15 +5,24 @@ on:
   pull_request:
     branches: [ v1beta ]
     types: [opened, synchronize]
-  workflow_dispatch:  
+  workflow_dispatch:
+    inputs:
+      LIBTAG:
+        description: 'set the libray git tag used for static library during the compiling. this field must be valid. e.g. v1beta.fukuoka.1729.lib'
+        required: true
+      BINTAG:
+        description: 'set the agent binary git tag used to identify agent revision. e.g. v1beta.fukuoka.1729'
+        required: true
+  
+        
 jobs:
   build:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     environment: v1beta
     env:
-      LIBTAG: "v1beta.fukuoka.1729.lib"
-      BINTAG: "v1beta.fukuoka.1729"
+      LIBTAG: ${{ github.event.inputs.LIBTAG }}
+      BINTAG: ${{ github.event.inputs.BINTAG }}
       GITLAB_URL: "gitlab.com/digital-fo/connectivity/enterprise-connect"
     steps:
       - uses: actions/checkout@v2
