@@ -1,4 +1,4 @@
-name: v1.1beta-ci
+name: v1beta-ci
 on:
   push:
     branches: [ v1beta ]
