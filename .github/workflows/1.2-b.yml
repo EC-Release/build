@@ -1,0 +1,22 @@
+name:  1.2-b-CI
+
+on:
+  push:
+    branches: [ 1.2-b ]
+  pull_request:
+    branches: [ 1.2-b ]
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    env:
+      LIBTAG="1.2-b.0.reiwa.lib"
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: script
+        uses: addnab/docker-run-action@v3
+        image: enterpriseconnect/build:v1.2beta
+        options: --network host -v $TRAVIS_BUILD_DIR:/build -e DIND_PATH= -e DIST=dist -e ARTIFACT=tengu -e API=api -e LIBPKG=github.com/wzlib -e LIBTAG=$LIBTAG -e DHOME=github.com/EC-Release/tengu -e ORG=github.com -e GITLAB_URL=$GITLAB_URL -e GITLAB_TKN=$GITLAB_TKN -e GITPUBTKN=$GITPUBTKN -e SDK_BRANCH=disty -e SRC_BRANCH=1.2-b -e CA_PPRS=$CA_PPRS
