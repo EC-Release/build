@@ -1,10 +1,5 @@
 name: v1beta-ci
 on:
-  push:
-    branches: [ v1beta ]
-  pull_request:
-    branches: [ v1beta ]
-    types: [opened, synchronize]
   workflow_dispatch:
     inputs:
       LIBTAG:
