@@ -16,13 +16,15 @@ jobs:
     env:
       LIBTAG: ${{ github.event.inputs.LIBTAG }}
       BINTAG: ${{ github.event.inputs.BINTAG }}
+      GITLAB_TKN: ${{ secrets.GITLAB_TKN }}
+      GITPUBTKN: ${{ secrets.GITPUBTKN }}
       GITLAB_URL: "gitlab.com/digital-fo/connectivity/enterprise-connect"
     steps:
       - uses: actions/checkout@v2
       - name: dind build
         id: dind-build
         #env:
-        run: docker run --network host -v $(pwd):/build --env-file build.list -e LIBTAG=$LIBTAG -e BINTAG=$BINTAG -e GITLAB_URL=$GITLAB_URL -e GITLAB_TKN=$GITLAB_TKN -e GITPUBTKN=$GITPUBTKN -e CA_PPRS=$CA_PPRS enterpriseconnect/build:v1beta
+        run: docker run --network host -v $(pwd):/build --env-file build.list -e GITLAB_TKN=$GITLAB_TKN -e GITPUBTKN=$GITPUBTKN -e LIBTAG=$LIBTAG -e BINTAG=$BINTAG -e GITLAB_URL=$GITLAB_URL -e GITLAB_TKN=$GITLAB_TKN -e GITPUBTKN=$GITPUBTKN -e CA_PPRS=$CA_PPRS enterpriseconnect/build:v1beta
       - name: after merged
         if: github.event_name == 'push'
         id: pr-merged
