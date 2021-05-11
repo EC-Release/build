@@ -8,8 +8,6 @@ on:
       BINTAG:
         description: 'set the agent binary git tag used to identify agent revision. e.g. v1beta.fukuoka.1729'
         required: true
-  
-        
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,30 +22,7 @@ jobs:
       - name: dind build
         id: dind-build
         #env:
-        run: |
-          - >
-            docker run --network host
-            -v $TRAVIS_BUILD_DIR:/build
-            -e DIND_PATH=
-            -e PLUGINS=plugins
-            -e DIST=dist
-            -e ARTIFACT=agent
-            -e API=api
-            -e LIBPKG=github.com/wzlib
-            -e LIBTAG=$LIBTAG
-            -e BINTAG=$BINTAG
-            -e TLSPLUGINPKG=github.com/EC-Release/tls-plg
-            -e VLNPLUGINPKG=github.com/EC-Release/vln-plg
-            -e TLSPLUGIN=tls
-            -e VLNPLUGIN=vln
-            -e DHOME=github.com/EC-Release/agent
-            -e ORG=github.com
-            -e GITLAB_URL=$GITLAB_URL
-            -e GITLAB_TKN=$GITLAB_TKN
-            -e GITPUBTKN=$GITPUBTKN
-            -e SDK_BRANCH=v1beta
-            -e CA_PPRS=$CA_PPRS
-            -it enterpriseconnect/build:v1beta
+        run: docker run --network host -v $TRAVIS_BUILD_DIR:/build -e DIND_PATH= -env-file build.list -e GITLAB_URL=$GITLAB_URL -e GITLAB_TKN=$GITLAB_TKN -e GITPUBTKN=$GITPUBTKN -e CA_PPRS=$CA_PPRS -it enterpriseconnect/build:v1beta
       - name: after merged
         if: github.event_name == 'push'
         id: pr-merged
