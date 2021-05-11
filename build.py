@@ -85,8 +85,8 @@ def main():
 
 
     print "generate darwin_amd64 artifacts"
-    os.system("CGO_ENABLED=0 GOOS=darwin GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_darwin_sys {}/*.go".format(BINTAG,BINARY,DHOME))
-    os.system("CGO_ENABLED=0 GOOS=darwin GODEBUG=netdns=go GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_darwin_var {}/*.go".format(BINTAG,BINARY,DHOME))
+    os.system("CGO_ENABLED=0 GOOS=darwin GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_darwin_sys {}/*.go".format(BINLDFLAGS,BINARY,DHOME))
+    os.system("CGO_ENABLED=0 GOOS=darwin GODEBUG=netdns=go GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_darwin_var {}/*.go".format(BINLDFLAGS,BINARY,DHOME))
 
     print "generate darwin_amd64 plugins bin dns resolved by system"
     os.system("CGO_ENABLED=0 GOOS=darwin GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_darwin_sys {}/*.go".format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
@@ -98,8 +98,8 @@ def main():
 
 
     print "generate windows_amd64 artifacts"
-    os.system("CGO_ENABLED=0 GOOS=windows GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_windows_sys.exe {}/*.go".format(BINTAG,BINARY,DHOME))
-    os.system("CGO_ENABLED=0 GOOS=windows GODEBUG=netdns=go GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_windows_var.exe {}/*.go".format(BINTAG,BINARY,DHOME))
+    os.system("CGO_ENABLED=0 GOOS=windows GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_windows_sys.exe {}/*.go".format(BINLDFLAGS,BINARY,DHOME))
+    os.system("CGO_ENABLED=0 GOOS=windows GODEBUG=netdns=go GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_windows_var.exe {}/*.go".format(BINLDFLAGS,BINARY,DHOME))
 
     print "generate windows_amd64 plugins bin dns resolved by system"
     os.system("CGO_ENABLED=0 GOOS=windows GODEBUG=netdns=cgo GOARCH=amd64 go build -ldflags '{}' -tags netgo -a -v -o /{}_windows_sys.exe {}/*.go".format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
@@ -111,8 +111,8 @@ def main():
 
     
     print "generate linux_arm artifacts"
-    os.system("CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=arm go build -ldflags '{}' -tags netgo -a -v -o /{}_arm_sys {}/*.go".format(BINTAG,BINARY,DHOME))
-    os.system("CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=arm go build -ldflags '{}' -tags netgo -a -v -o /{}_arm_var {}/*.go".format(BINTAG,BINARY,DHOME))
+    os.system("CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=arm go build -ldflags '{}' -tags netgo -a -v -o /{}_arm_sys {}/*.go".format(BINLDFLAGS,BINARY,DHOME))
+    os.system("CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=go GOARCH=arm go build -ldflags '{}' -tags netgo -a -v -o /{}_arm_var {}/*.go".format(BINLDFLAGS,BINARY,DHOME))
 
     print "generate linux_arm plugins bin dns resolved by system"
     os.system("CGO_ENABLED=0 GOOS=linux GODEBUG=netdns=cgo GOARCH=arm go build -ldflags '{}' -tags netgo -a -v -o /{}_arm_sys {}/*.go".format(TLSLDFLAGS,TLSPLUGINBIN,TLSSRC))
