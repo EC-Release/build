@@ -1,3 +1,4 @@
+DIND_PATH=
 PLUGINS=plugins
 DIST=dist
 ARTIFACT=agent
