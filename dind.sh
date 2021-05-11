@@ -141,7 +141,8 @@ ls -la ${GOPATH}/pkg/linux_amd64/${LIBPKG}
 chmod -R 755 ./
 go version
 # qa stage
-cd ${GOPATH}/src/${DHOME}
+#cd ${GOPATH}/src/${DHOME}
+cd ${GOPATH}/src/${LIBPKG}
 make
 cd /build
 # build/deployment
