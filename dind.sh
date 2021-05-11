@@ -110,10 +110,9 @@ git clone --depth 1 https://${VLNPLUGINPKG}.git ${GOPATH}/src/${VLNPLUGINPKG} --
 
 ls -la && pwd
 
-echo "clonning homebrew formula conf.." 
-git clone --depth 1 https://${GITPUBTKN}@github.com/EC-Release/homebrew-core.git /brew --branch ec ${ARTIFACT}
-
-cp ./ec${ARTIFACT}.rb /brew/Formula/ec${ARTIFACT}.rb
+#echo "clonning homebrew formula conf.." 
+#git clone --depth 1 https://${GITPUBTKN}@github.com/EC-Release/homebrew-core.git /brew --branch ec ${ARTIFACT}
+#cp ./ec${ARTIFACT}.rb /brew/Formula/ec${ARTIFACT}.rb
 
 echo "clonning external sdk.."
 git clone --depth 1 --branch ${SDK_BRANCH} https://${GITPUBTKN}@github.com/EC-Release/sdk.git /${DIST}
@@ -150,7 +149,7 @@ python2 -u build.py
 #EC_TAG=$(cat ./build_tag)
 EC_TAG=$BINTAG
 
-brew_checkin
+#brew_checkin
 sdk_external_checkin
 #agent_tagging
 
