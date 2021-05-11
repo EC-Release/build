@@ -22,7 +22,7 @@ jobs:
       - name: dind build
         id: dind-build
         #env:
-        run: docker run --network host -v $(pwd):/build --env-file build.list -e GITLAB_URL=$GITLAB_URL -e GITLAB_TKN=$GITLAB_TKN -e GITPUBTKN=$GITPUBTKN -e CA_PPRS=$CA_PPRS enterpriseconnect/build:v1beta
+        run: docker run --network host -v $(pwd):/build --env-file build.list -e LIBTAG=$LIBTAG -e BINTAG=$BINTAG -e GITLAB_URL=$GITLAB_URL -e GITLAB_TKN=$GITLAB_TKN -e GITPUBTKN=$GITPUBTKN -e CA_PPRS=$CA_PPRS enterpriseconnect/build:v1beta
       - name: after merged
         if: github.event_name == 'push'
         id: pr-merged
