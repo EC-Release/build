@@ -93,9 +93,7 @@ function agent_tagging(){
 }
 
 echo "clonning agent repo.."
-echo https://digitalfoundry:${GITLAB_TKN}@${GITLAB_URL}/platform-agnostic/agent.git
-echo https://${GITLAB_URL}/platform-agnostic/agent.git
-git clone --depth 1 https://digitalfoundry:${GITLAB_TKN}@${GITLAB_URL}/platform-agnostic/agent.git ${GOPATH}/src/${DHOME} --branch ${SDK_BRANCH}
+git clone --depth 1 https://${GITLAB_TKN}@${GITLAB_URL}/platform-agnostic/agent.git ${GOPATH}/src/${DHOME} --branch ${SDK_BRANCH}
 ls -al ${GOPATH}/src/${DHOME}/src/${LIBPKG}
 mkdir -p ${GOPATH}/src/${LIBPKG}
 mv ${GOPATH}/src/${DHOME}/src/${LIBPKG}/* ${GOPATH}/src/${LIBPKG}
