@@ -142,7 +142,7 @@ chmod -R 755 ./
 go version
 # qa stage
 #cd ${GOPATH}/src/${DHOME}
-cd ${GOPATH}/src/${LIBPKG}
+#cd ${GOPATH}/src/${LIBPKG}
 make
 cd /build
 # build/deployment
