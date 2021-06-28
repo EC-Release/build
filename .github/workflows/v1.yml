@@ -1,0 +1,34 @@
+name: v1-ci
+on:
+  workflow_dispatch:
+    branches:
+      - v1
+    inputs:
+      LIBTAG:
+        description: 'set the libray git tag used for static library during the compiling. this field must be valid. e.g. v1.hokkaido.214.lib'
+        required: true
+      BINTAG:
+        description: 'set the agent binary git tag used to identify agent revision. e.g. 1.0.0-r.214'
+        required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    environment: v1beta
+    env:
+      LIBTAG: ${{ github.event.inputs.LIBTAG }}
+      BINTAG: ${{ github.event.inputs.BINTAG }}
+      GITLAB_TKN: ${{ secrets.GITLAB_TKN }}
+      GITPUBTKN: ${{ secrets.GITPUBTKN }}
+      GITLAB_URL: "gitlab.com/digital-fo/connectivity/enterprise-connect"
+    steps:
+      - uses: actions/checkout@v2
+      - name: dind build
+        id: dind-build
+        #env:
+        run: docker run --network host -v $(pwd):/build --env-file build.list -e GITLAB_TKN=$GITLAB_TKN -e GITPUBTKN=$GITPUBTKN -e LIBTAG=$LIBTAG -e BINTAG=$BINTAG -e GITLAB_URL=$GITLAB_URL -e GITLAB_TKN=$GITLAB_TKN -e GITPUBTKN=$GITPUBTKN -e CA_PPRS=$CA_PPRS enterpriseconnect/build:v1beta
+      - name: after merged
+        if: github.event_name == 'push'
+        id: pr-merged
+        run: |
+          echo pr has been merged and closed
