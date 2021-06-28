@@ -1,6 +1,8 @@
 name: v1beta-ci
 on:
   workflow_dispatch:
+    branches:
+      - v1beta
     inputs:
       LIBTAG:
         description: 'set the libray git tag used for static library during the compiling. this field must be valid. e.g. v1beta.fukuoka.1729.lib'
