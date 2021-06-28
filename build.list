@@ -10,4 +10,4 @@ TLSPLUGIN=tls
 VLNPLUGIN=vln
 DHOME=github.com/EC-Release/agent
 ORG=github.com
-SDK_BRANCH=v1beta
+SDK_BRANCH=v1
